@@ -35,3 +35,9 @@
 |parallel_shell_sort(list)の実装  |  比嘉  |       |
 
 
+# 結果
+
+| 関数名               |n=1000       |n=10000      |n=100000     |n=100000     |
+| ------------------- | ----------- | ----------- | ----------- | ----------- |
+|merge_sort()         |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
+|parallel_merge_sort()|0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
