@@ -50,3 +50,9 @@
 |shell_sort()          |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
 |parallel_shell_sort() |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
 
+
+# 考察
+
+・ソートする配列の要素数が少ないときは並列化しない方が処理時間が短い．  
+→並列処理を行うとオーバーヘッドやデータの受け渡しの時間が発生するから？  
+
