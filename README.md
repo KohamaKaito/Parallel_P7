@@ -41,7 +41,6 @@
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
 |merge_sort()          |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
 |parallel_merge_sort() |0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
-|parallel_merge_sort() |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
 |bucket_sort()         |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
 |parallel_bucket_sort()|0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
 |bubble_sort()         |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
