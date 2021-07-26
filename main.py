@@ -15,7 +15,7 @@ target_list = myModule.create_list(10)
 print("ソート前の配列↓")
 print(target_list)
 
-
+"""
 # マージソート（並列化無し）
 print("マージソート（並列化無し）後の配列↓")
 start = time.time()
@@ -49,4 +49,14 @@ start = time.time()
 sorted_list04 = bucketModule.parallel_bucket_sort(target_list)
 stop = time.time()
 print(sorted_list04)
+print('⏱%.3f seconds' % (stop - start))
+"""
+
+
+# バブルソート（並列化無し）
+print("バブルソート（並列化無し）後の配列↓")
+start = time.time()
+sorted_list05 = bubbleModule.bubble_sort(target_list)
+stop = time.time()
+print(sorted_list05)
 print('⏱%.3f seconds' % (stop - start))
