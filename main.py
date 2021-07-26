@@ -1,4 +1,5 @@
 import time
+from concurrent.futures import ProcessPoolExecutor
 
 #自作モジュール
 import mergeModule
@@ -59,4 +60,13 @@ start = time.time()
 sorted_list05 = bubbleModule.bubble_sort(target_list)
 stop = time.time()
 print(sorted_list05)
+print('⏱%.3f seconds' % (stop - start))
+
+
+# バブルソート（並列化有り）
+print("バブルソート（並列化有り）後の配列↓")
+start = time.time()
+sorted_list06 = bubbleModule.parallel_bubble_sort(target_list)
+stop = time.time()
+print(sorted_list06)
 print('⏱%.3f seconds' % (stop - start))
