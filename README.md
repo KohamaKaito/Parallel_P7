@@ -22,18 +22,32 @@
 
 n = ソートを行う数字の数
 
-| 関数名                |n=1000       |n=10000      |n=100000     |n=100000     |
+| Merge Sort           |n=1000       |n=10000      |n=100000     |n=100000     |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
-|merge_sort()          |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
-|parallel_merge_sort() |0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
-|bucket_sort()         |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|parallel_bucket_sort()|0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|bubble_sort()         |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|parallel_bubble_sort()|0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|quick_sort()          |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|parallel_quick_sort() |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|shell_sort()          |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|parallel_shell_sort() |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|逐次                   |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
+|並列                   |0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
+
+| Bubble Sort　　         |n=1000       |n=10000      |n=100000     |n=100000     |
+| -------------------- | ----------- | ----------- | ----------- | ----------- |
+|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+
+| Quick Sort　　          |n=1000       |n=10000      |n=100000     |n=100000     |
+| -------------------- | ----------- | ----------- | ----------- | ----------- |
+|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+
+| Shell Sort　　          |n=1000       |n=10000      |n=100000     |n=100000     |
+| -------------------- | ----------- | ----------- | ----------- | ----------- |
+|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+
+| Bucket Sort　　         |n=1000       |n=10000      |n=100000     |n=100000     |
+| -------------------- | ----------- | ----------- | ----------- | ----------- |
+|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+
+
 
 
 # 考察
