@@ -27,10 +27,10 @@ n = ソートを行う数字の数
 |逐次                   |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
 |並列                   |0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
 
-| Bubble Sort　　         |n=1000       |n=10000      |n=100000     |n=100000     |
+| Bubble Sort　　         |n=100        |n=1000       |n=2000       |n=3000       |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
-|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|逐次                   |0.005 seconds|1.077 seconds|6.457 seconds|20.108 seconds|
+|並列                   |0.234 seconds|1.330 seconds|4.047 seconds|7.297 seconds|
 
 | Quick Sort　　          |n=1000       |n=10000      |n=100000     |n=100000     |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
