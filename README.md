@@ -22,7 +22,7 @@
 
 n = ソートを行う数字の数
 
-| Merge Sort           |n=1000       |n=10000      |n=100000     |n=100000     |
+| Merge Sort           |n=1000       |n=10000      |n=100000     |n=1000000     |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
 |逐次                   |0.005 seconds|0.063 seconds|0.779 seconds|8.991 seconds|
 |並列                   |0.036 seconds|0.062 seconds|0.617 seconds|5.629 seconds|
@@ -32,15 +32,15 @@ n = ソートを行う数字の数
 |逐次                   |0.005 seconds|1.077 seconds|6.457 seconds|20.108 seconds|
 |並列                   |0.234 seconds|1.330 seconds|4.047 seconds|7.297 seconds|
 
-| Quick Sort　　          |n=1000       |n=10000      |n=100000     |n=100000     |
-| -------------------- | ----------- | ----------- | ----------- | ----------- |
-|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+| Quick Sort　　          |n=1000       |n=10000      |n=100000     |n=1000000    |n=1000000     |
+| -------------------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+|逐次                   |0.002 seconds|0.029 seconds|0.371 seconds|5.550 seconds|71.281 seconds|
+|並列                   |0.565 seconds|0.717 seconds|1.111 seconds|3.769 seconds|50.953 seconds|
 
-| Shell Sort　　          |n=1000       |n=10000      |n=100000     |n=100000     |
+| Shell Sort　　          |n=1000       |n=10000      |n=100000     |n=1000000    |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
-|逐次                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
-|並列                   |0.000 seconds|0.000 seconds|0.000 seconds|0.000 seconds|
+|逐次                   |0.006 seconds|0.116 seconds|1.432 seconds|18.673 seconds|
+|並列                   |0.507 seconds|0.834 seconds|2.779 seconds|25.254 seconds|
 
 | Bucket Sort　　         |n=1000       |n=10000      |n=100000     |n=100000     |
 | -------------------- | ----------- | ----------- | ----------- | ----------- |
@@ -76,9 +76,9 @@ n = ソートを行う数字の数
 |parallel_merge_sort(list)の実装  |  小浜  | done  |
 |bucket_sort(list)の実装          |  鳩間  | doing |
 |parallel_bucket_sort(list)の実装 |  鳩間  |       |
-|bubble_sort(list)の実装          |  宮城  | doing |
-|parallel_bubble_sort(list)の実装 |  宮城  |       |
-|quick_sort(list)の実装           |  佐藤  | doing |
-|parallel_quick_sort(list)の実装  |  佐藤  |       |
-|shell_sort(list)の実装           |  比嘉  | doing |
-|parallel_shell_sort(list)の実装  |  比嘉  |       |
+|bubble_sort(list)の実装          |  宮城  | done  |
+|parallel_bubble_sort(list)の実装 |  宮城  | done  |
+|quick_sort(list)の実装           |  佐藤  | done  |
+|parallel_quick_sort(list)の実装  |  佐藤  | done  |
+|shell_sort(list)の実装           |  比嘉  | done  |
+|parallel_shell_sort(list)の実装  |  比嘉  | doing |
