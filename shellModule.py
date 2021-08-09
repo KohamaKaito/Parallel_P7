@@ -3,7 +3,25 @@
 '''
 import copy
 import multiprocessing 
-import concurrent.futures
+
+def merge(list):
+    #２つのリストを一つにまとめる
+    merged=[]
+    zero_count=0
+    one_count=0
+    while len(list[0])>zero_count and len(list[1])>one_count:
+        if(list[0][zero_count]<list[1][one_count]):
+            merged.append(list[0][zero_count])
+            zero_count+=1
+        else:
+            merged.append(list[1][one_count])
+            one_count+=1
+    if(len(list[0])>zero_count):
+        merged.extend(list[0][zero_count:])
+    else:
+        merged.extend(list[1][one_count:])
+    return merged
+
 # シェルソート（並列化無し）
 def shell_sort(list):
     sorted_List=copy.copy(list)
@@ -38,58 +56,28 @@ def parallel_shell_sort(list):
     pool = multiprocessing.Pool(processes=thread)
     length=len(sorted_List)
 
-    #配列をthread間隔で分割する
-    #スレッドの数の範囲内で間隔を決める。
     space=thread
-    #割り振る配列を作成
-    while space>0:
-        two_dimensions_list=[]
-        for start in range(space):
-            modulus=0
-            tmp_list=[]
-            while (start+space*modulus)<length:#挿入ソートでソートする配列を作成
-                tmp_list.append(sorted_List[start+space*modulus])
-                #[[0, 4, 8, 12, 16], [1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15]]
-                modulus+=1
-            two_dimensions_list.append(tmp_list)
-        #それぞれにshell_sortを実行させる
-        p=multiprocessing.Pool(space)
-        tmp_list=p.map(shell_sort,two_dimensions_list)
+    two_dimensions_list=[]
+    for start in range(space):
+        modulus=0
+        tmp_list=[]
+        while (start+space*modulus)<length:#挿入ソートでソートする配列を作成
+            tmp_list.append(sorted_List[start+space*modulus])
+            modulus+=1
+        two_dimensions_list.append(tmp_list)
+    pool=multiprocessing.Pool(space)
+    tmp_list=pool.map(shell_sort,two_dimensions_list)
 
-        for count in range(len(tmp_list)):
-            #print(tmp_list[count])
-            for data in range(len(tmp_list[count])):
-                sorted_List[count+space*data]=tmp_list[count][data]
-
-        space=int(space/2)
-
-    '''
-    #space=1
-    #スレッドの数の範囲内で間隔を決める。
-    space=thread
-    if(space>length/2):
-        space=int(length/2)
-    #各スレッド用の配列を作る
-    while space>0:
-        two_dimensions_list=[]
-        for start in range(space):
-            modulus=0
-            tmp_list=[]
-            while (start+space*modulus)<length:#挿入ソートでソートする配列を作成
-                tmp_list.append(sorted_List[start+space*modulus])
-                modulus+=1
-            two_dimensions_list.append(tmp_list)
-        p=multiprocessing.Pool(space)
-        tmp_list=p.map(insertion_sort,two_dimensions_list)
-
-
-        for count in range(len(tmp_list)):
-            #print(tmp_list[count])
-            for data in range(len(tmp_list[count])):
-                sorted_List[count+space*data]=tmp_list[count][data]
-    '''
-
-    return sorted_List
+    #並列シェルソートである程度並び替えたものをマージ
+    while len(tmp_list)>1:
+        if(len(tmp_list)%2==1):
+            surplus=tmp_list.pop()
+        merge_list=[]
+        for count in range(0,len(tmp_list),2):
+            merge_list.append([tmp_list[count],tmp_list[count+1]])
+        
+        tmp_list=pool.map(merge,merge_list)
+    return tmp_list
 
 
 
@@ -106,28 +94,3 @@ def insertion_sort(list):#挿入ソート
                     break
             sorted_List[j]=tmp
     return sorted_List
-
-
-'''
-参考
-https://engineeringnote.hateblo.jp/entry/python/algorithm-and-data-structures/shell_sort
-
-
-一定間隔おきにグループ化する。
-4 3 5 7 1 8 6 2 で4置きにグループ化するなら
-グループ1:4 1
-グループ2:3 8
-グループ3:5 6
-グループ4:7 2
-グループごとに並び替えを行う（並列）
-小さい順に並び替えるとグループ4だけで並び替えが発生し、
-1 3 5 2 4 8 6 7 (2と7が逆転)
-間隔を縮めて再度グループ化 間隔2
-グループ1:1 5 4 6
-グループ2:3 2 8 7
-再度グループ内で並び変え
-1 2 4 3 5 7 6 8
-間隔1になったら残りの要素で並び変えする。
-
-
-'''
