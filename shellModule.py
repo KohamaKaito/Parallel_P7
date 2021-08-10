@@ -70,6 +70,7 @@ def parallel_shell_sort(list):
 
     #並列シェルソートである程度並び替えたものをマージ
     while len(tmp_list)>1:
+        surplus=[]
         if(len(tmp_list)%2==1):
             surplus=tmp_list.pop()
         merge_list=[]
@@ -77,7 +78,9 @@ def parallel_shell_sort(list):
             merge_list.append([tmp_list[count],tmp_list[count+1]])
         
         tmp_list=pool.map(merge,merge_list)
-    return tmp_list
+        if(len(surplus)>0):
+            tmp_list.append(surplus)
+    return tmp_list[0]
 
 
 
