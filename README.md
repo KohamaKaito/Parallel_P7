@@ -74,11 +74,11 @@ n = ソートを行う数字の数
 |create_list()の実装              |  小浜  | done  |
 |merge_sort(list)の実装           |  小浜  | done  |
 |parallel_merge_sort(list)の実装  |  小浜  | done  |
-|bucket_sort(list)の実装          |  鳩間  | doing |
-|parallel_bucket_sort(list)の実装 |  鳩間  |       |
+|bucket_sort(list)の実装          |  鳩間  | done  |
+|parallel_bucket_sort(list)の実装 |  鳩間  | done  |
 |bubble_sort(list)の実装          |  宮城  | done  |
 |parallel_bubble_sort(list)の実装 |  宮城  | done  |
 |quick_sort(list)の実装           |  佐藤  | done  |
 |parallel_quick_sort(list)の実装  |  佐藤  | done  |
 |shell_sort(list)の実装           |  比嘉  | done  |
-|parallel_shell_sort(list)の実装  |  比嘉  | doing |
+|parallel_shell_sort(list)の実装  |  比嘉  | done  |
