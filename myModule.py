@@ -5,5 +5,5 @@ import random
 def create_list(value):
     num_list = []
     for i in range(value):
-        num_list.append(random.randint(0,1000))
+        num_list.append(random.randint(1,1000))
     return num_list

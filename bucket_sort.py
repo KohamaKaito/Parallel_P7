@@ -7,7 +7,7 @@ from typing import NewType
 
 #バケットソート(並列化なし)
 def bucket_sort(list):
-    new_list = counting_sort(list,10)
+    new_list = counting_sort(list,1000)
     return new_list
 
 
@@ -57,7 +57,7 @@ def counting_sort(list,max_num):
 # 各プロセスで実行する処理
 def parallel_counting_sort(list):
 
-    count_list = [0]*(10+1)
+    count_list = [0]*(1000+1)
 
     for i in list:
         count_list[i] += 1
