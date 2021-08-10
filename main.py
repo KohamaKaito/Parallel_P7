@@ -1,4 +1,5 @@
 import time
+from concurrent.futures import ProcessPoolExecutor
 
 #自作モジュール
 import mergeModule
@@ -17,13 +18,6 @@ if __name__ == "__main__":
     print(target_list)
 
 
-    # マージソート（並列化無し）
-    print("マージソート（並列化無し）後の配列↓")
-    start = time.time()
-    sorted_list01 = mergeModule.merge_sort(target_list)
-    stop = time.time()
-    print(sorted_list01)
-    print('⏱%.3f seconds' % (stop - start))
 
 
     # マージソート（並列化有り）
@@ -44,10 +38,4 @@ if __name__ == "__main__":
     print('⏱%.3f seconds' % (stop - start))
 
 
-    # バケットソート（並列化有り）
-    print("バケットソート（並列化有り）後の配列↓")
-    start = time.time()
-    sorted_list04 = bucketModule.parallel_bucket_sort(target_list)
-    stop = time.time()
-    print(sorted_list04)
-    print('⏱%.3f seconds' % (stop - start))
+
